@@ -1,16 +1,19 @@
-from django.test.testcases import SimpleTestCase
-from django.utils.translation import activate, deactivate, get_language
+from django.test import TestCase
 
 from localflavor.ca.forms import CAPostalCodeField, CAProvinceField, CAProvinceSelect, CASocialInsuranceNumberField
+
+from .forms import CAPlaceForm
 
 
 class CALocalFlavorTests(SimpleTestCase):
     def setUp(self):
-        self.original_language = get_language()
-        deactivate()
-
-    def tearDown(self):
-        activate(self.original_language)
+        self.form = CAPlaceForm({
+            'province': 'QC', 
+            'province_req': 'ON',
+            'province_default': 'QC',
+            'name': 'impossible',
+            'postal_code': 'A2Q 2R3'
+        })
 
     def test_CAProvinceSelect(self):
         f = CAProvinceSelect()

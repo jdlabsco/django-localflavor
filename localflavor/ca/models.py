@@ -12,7 +12,7 @@ class CAProvinceField(CharField):
 
     Forms represent it as a ``forms.CAProvinceField`` field.
 
-    .. versionadded:: 3.0.1
+    .. versionadded:: 3.0.x
     """
 
     description = _("Canadian Province (two uppercase letters)")
@@ -34,7 +34,7 @@ class CAPostalCodeField(CharField):
 
     Forms represent it as a :class:`~localflavor.ca.forms.CAPostalCodeField` field.
 
-    .. versionadded:: 3.0.1
+    .. versionadded:: 3.0.x
     """
 
     description = _("Canadian Postal Code")
@@ -55,7 +55,7 @@ class CASocialInsuranceNumberField(CharField):
 
     Forms represent it as ``forms.CASocialInsuranceNumberField`` field.
 
-    .. versionadded:: 3.0.1
+    .. versionadded:: 3.0.x
     """
 
     description = _("Social security number")
